@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Bank Management System - ER Diagram and Flowchart</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f7fa;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+      }
+
+      .section {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        color: #3498db;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      /* ER Diagram Styles */
+      .er-diagram {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .entity {
+        display: inline-block;
+        border: 2px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+        background-color: #ecf0f1;
+        min-width: 300px;
+      }
+
+      .entity-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .attribute {
+        padding: 5px;
+        margin: 3px 0;
+        border-radius: 5px;
+        background-color: #d6eaf8;
+      }
+
+      .pk {
+        background-color: #d4efdf;
+        font-weight: bold;
+      }
+
+      /* Flowchart Styles */
+      .flowchart {
+        padding: 20px 0;
+      }
+
+      .flowchart-steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .box {
+        background-color: #3498db;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .box.start {
+        background-color: #2ecc71;
+      }
+
+      .box.process {
+        background-color: #3498db;
+      }
+
+      .box.decision {
+        background-color: #f39c12;
+      }
+
+      .box.output {
+        background-color: #9b59b6;
+      }
+
+      .arrow {
+        font-size: 24px;
+        color: #7f8c8d;
+      }
+
+      .legend {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        border-left: 4px solid #3498db;
+      }
+
+      .legend h3 {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+      }
+
+      .legend-color {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Blood Bank Management System</h1>
+
+      <div class="section">
+        <h2>ER Diagram</h2>
+        <div class="er-diagram">
+          <div class="entity">
+            <div class="entity-title">DONORS</div>
+            <div class="attribute pk">donor_id (PK)</div>
+            <div class="attribute">name</div>
+            <div class="attribute">blood_group</div>
+            <div class="attribute">city</div>
+            <div class="attribute">contact</div>
+            <div class="attribute">availability</div>
+            <div class="attribute">last_donation_date</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Program Flow</h2>
+        <div class="flowchart">
+          <div class="flowchart-steps">
+            <div class="step">
+              <div class="box start">Start Application</div>
+            </div>
+
+            <div class="step">
+              <div class="arrow">↓</div>
+            </div>
+
+            <div class="step">
+              <div class="box process">Initialize Database</div>
+            </div>
+
+            <div class="step">
+              <div class="arrow">↓</div>
+            </div>
+
+            <div class="step">
+              <div class="box process">Load Main Menu</div>
+            </div>
+
+            <div class="step">
+              <div class="arrow">↓</div>
+            </div>
+
+            <div class="step">
+              <div class="box decision">User Selects Action</div>
+            </div>
+
+            <div class="step">
+              <div class="arrow">↓</div>
+            </div>
+
+            <div class="step">
+              <div class="box process">Perform Selected Operation</div>
+            </div>
+
+            <div class="step">
+              <div class="arrow">↓</div>
+            </div>
+
+            <div class="step">
+              <div class="box output">Display Results in JavaFX Window</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section legend">
+        <h3>Flowchart Legend</h3>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #2ecc71"></div>
+          <span>Start/End Process</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #3498db"></div>
+          <span>Process Step</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #f39c12"></div>
+          <span>Decision Point</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #9b59b6"></div>
+          <span>Output/Result</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
