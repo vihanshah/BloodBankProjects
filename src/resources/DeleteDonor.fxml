@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DeleteController" style="-fx-background-color: radial-gradient(center 50% 50%, radius 100%, #e74c3c, #c0392b);">
+   <top>
+      <VBox alignment="CENTER" prefHeight="120.0" style="-fx-background-color: rgba(0, 0, 0, 0.6); -fx-background-radius: 0 0 40 40;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="DELETE DONOR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <effect>
+                  <javafx.scene.effect.DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
+               </effect>
+            </Label>
+            <Label text="Remove donor from the system" textFill="#f1c40f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <javafx.scene.effect.DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" width="15.0" />
+               </effect>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="40.0" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 40; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 25, 0, 0, 0); -fx-border-color: #e74c3c; -fx-border-width: 3; -fx-border-radius: 40;" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="30.0" vgap="30.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="160.0" />
+                <ColumnConstraints minWidth="350.0" />
+                  <ColumnConstraints minWidth="160.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Donor ID:" textFill="#2c3e50">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="donorIdField" prefHeight="55.0" prefWidth="300.0" promptText="Enter donor ID to delete" style="-fx-background-color: white; -fx-border-color: #e74c3c; -fx-border-width: 3; -fx-border-radius: 8; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+                  <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="2">
+                     <children>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #f1c40f; -fx-border-width: 3; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 15, 0, 0, 0);" text="Delete Donor" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" spacing="40.0">
+               <children>
+                  <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="55.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom, #f39c12, #e67e22); -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #f1c40f; -fx-border-width: 3; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 15, 0, 0, 0);" text="Clear Field" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" spacing="40.0" style="-fx-background-color: rgba(0, 0, 0, 0.4); -fx-background-radius: 40 40 0 0;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="55.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(to bottom, #34495e, #2c3e50); -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #f1c40f; -fx-border-width: 3; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 15, 0, 0, 0);" text="Back to Main Menu" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="60.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
